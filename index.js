@@ -17,7 +17,6 @@ addToCartButtonsDom.forEach(addToCartButtonDom => {
             name: clickedProductDom.querySelector('.food-title').innerText,
             price: clickedProductDom.querySelector('.food-price').innerText
         }
-        console.log('clicked-product', product)
         cartDom.insertAdjacentHTML("beforeend", `
                 <ul class="list-group">
                     <li class="list-group-item d-flex justify-content-between align-items-center">
