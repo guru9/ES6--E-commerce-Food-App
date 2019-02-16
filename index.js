@@ -2,19 +2,21 @@
 const cartDom = document.querySelector('.cart');
 
 //all food items button
-const addToCartButtonsDom = document.querySelectorAll('.card');
+const addToCartButtonsDom = document.querySelectorAll('#add_to_cart_button');
 
 //loop into selected buttons
 addToCartButtonsDom.forEach(addToCartButtonDom => {
     //get selected item
     addToCartButtonDom.addEventListener('click', () => {
         //selected item
-        const clickedProductDom = addToCartButtonDom.parentNode;
+        let clickedProductDom = addToCartButtonDom.parentNode;
+        const producEle = clickedProductDom.parentNode;
+
         //make a produc object from an item
         const product = {
-            image: clickedProductDom.querySelector('.card-img-top').getAttribute('src'),
-            name: clickedProductDom.querySelector('.food-title').innerText,
-            price: clickedProductDom.querySelector('.food-price').innerText
+            image: producEle.querySelector('.card-img-top').getAttribute('src'),
+            name: producEle.querySelector('.food-title').innerText,
+            price: producEle.querySelector('.food-price').innerText
         }
         //moved to cart place
         cartDom.insertAdjacentHTML("beforeend", `
@@ -28,3 +30,10 @@ addToCartButtonsDom.forEach(addToCartButtonDom => {
             `)
     })
 });
+
+/*Note:- other method to loop into an array
+
+    Array.from(addToCartButtonsDom).forEach((foo)=>{
+        return foo;
+    })
+*/
