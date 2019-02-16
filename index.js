@@ -1,6 +1,5 @@
 //cart-dom
 const cartDom = document.querySelector('.cart');
-console.log('cart---', cartDom)
 
 //all food items button
 const addToCartButtonsDom = document.querySelectorAll('.card');
@@ -17,6 +16,7 @@ addToCartButtonsDom.forEach(addToCartButtonDom => {
             name: clickedProductDom.querySelector('.food-title').innerText,
             price: clickedProductDom.querySelector('.food-price').innerText
         }
+        //moved to cart place
         cartDom.insertAdjacentHTML("beforeend", `
                 <ul class="list-group">
                     <li class="list-group-item d-flex justify-content-between align-items-center">
