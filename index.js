@@ -22,7 +22,7 @@ addToCartButtonsDom.forEach(addToCartButtonDom => {
         cartDom.insertAdjacentHTML("beforeend", `
                 <ul class="list-group">
                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                        ${product.name}
+                        <span>${product.name}</span>
                         <span><img src="${product.image}" alt="${product.name}"></span>
                          <span class="badge badge-primary badge-pill">${product.price}</span>
                     </li>
