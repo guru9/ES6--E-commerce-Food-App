@@ -10,13 +10,13 @@ addToCartButtonsDom.forEach(addToCartButtonDom => {
     addToCartButtonDom.addEventListener('click', () => {
         //selected item
         let clickedProductDom = addToCartButtonDom.parentNode;
-        const producEle = clickedProductDom.parentNode;
+        const itemSelected = clickedProductDom.parentNode;
 
         //make a produc object from an item
         const product = {
-            image: producEle.querySelector('.card-img-top').getAttribute('src'),
-            name: producEle.querySelector('.food-title').innerText,
-            price: producEle.querySelector('.food-price').innerText
+            image: itemSelected.querySelector('.card-img-top').getAttribute('src'),
+            name: itemSelected.querySelector('.food-title').innerText,
+            price: itemSelected.querySelector('.food-price').innerText
         }
         //moved to cart place
         cartDom.insertAdjacentHTML("beforeend", `
