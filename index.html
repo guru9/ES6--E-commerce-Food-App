@@ -11,9 +11,19 @@
     <link rel="icon" href="./assets/images/favicon.ico" type="image/x-icon">
 </head>
 <style>
+    /* product styles */
     .products {
         margin-top: 10px;
         margin-bottom: 10px;
+    }
+
+    .card {
+        box-shadow: 2px 5px 5px 0px #eee;
+        margin-bottom: 10px;
+    }
+
+    .card:hover {
+        box-shadow: 5px 5px 10px 5px #c7c1c170;
     }
 
     .card img:hover {
@@ -72,10 +82,7 @@
 
     .card-img-top {
         height: 150px !important;
-    }
-
-    .cart-header {
-        text-align: center;
+        padding: 10px;
     }
 
     .card-body span {
@@ -99,20 +106,42 @@
 
     .food-price {
         text-align: right;
-        width: 120px;
+        width: 100%;
     }
 
-    .list-group-item :first-child, .list-group-item :last-child {
-        width: 50px;
+    /* cart styles */
+    .cart-header {
+        text-align: center;
     }
 
+    .cart {
+        margin-bottom: 10px;
+    }
+
+    .list-group-item :first-child,
+    .list-group-item :nth-last-child(2),
     .list-group-item :nth-child(2) {
-        width: 35px;
+        width: 50px;
     }
 
     .list-group-item img {
         width: 35px;
         height: 35px;
+    }
+
+    .card-body a {
+        width: 100%;
+        color: #fff !important;
+    }
+
+    .increase,
+    .decrease,
+    .delete {
+        cursor: pointer;
+    }
+
+    .button-disable {
+        pointer-events: none;
     }
 </style>
 
@@ -120,7 +149,7 @@
     <div class="container">
         <!-- main layout -->
         <div class="row">
-            <div class="col-sm-8">
+            <div class="col-sm-12 col-md-12 col-lg-8">
                 <h4>Products</h4>
                 <!-- product layout -->
                 <div class="row products">
@@ -132,7 +161,7 @@
                                     <h5 class="food-title">food1</h5>
                                     <h6 class="food-price">5 Rs</h6>
                                 </span>
-                                <a class="btn btn-primary" id="add_to_cart_button">Add to cart</a>
+                                <a class="btn btn-success btn-sm" id="add_to_cart_button">Add to cart</a>
                             </div>
                         </div>
                     </div>
@@ -144,7 +173,7 @@
                                     <h5 class="food-title">food2</h5>
                                     <h6 class="food-price">10 Rs</h6>
                                 </span>
-                                <a class="btn btn-primary" id="add_to_cart_button">Add to cart</a>
+                                <a class="btn btn-success btn-sm" id="add_to_cart_button">Add to cart</a>
                             </div>
                         </div>
                     </div>
@@ -156,7 +185,7 @@
                                     <h5 class="food-title">Food3</h5>
                                     <h6 class="food-price">6 Rs</h6>
                                 </span>
-                                <a class="btn btn-primary" id="add_to_cart_button">Add to cart</a>
+                                <a class="btn btn-success btn-sm" id="add_to_cart_button">Add to cart</a>
                             </div>
                         </div>
                     </div>
@@ -168,7 +197,7 @@
                                     <h5 class="food-title">Food4</h5>
                                     <h6 class="food-price">12 Rs</h6>
                                 </span>
-                                <a class="btn btn-primary" id="add_to_cart_button">Add to cart</a>
+                                <a class="btn btn-success btn-sm" id="add_to_cart_button">Add to cart</a>
                             </div>
                         </div>
                     </div>
@@ -180,7 +209,7 @@
                                     <h5 class="food-title">Food5</h5>
                                     <h6 class="food-price">15 RS</h6>
                                 </span>
-                                <a class="btn btn-primary" id="add_to_cart_button">Add to cart</a>
+                                <a class="btn btn-success btn-sm" id="add_to_cart_button">Add to cart</a>
                             </div>
                         </div>
                     </div>
@@ -192,7 +221,7 @@
                                     <h5 class="food-title">Food6</h5>
                                     <h6 class="food-price">15 RS</h6>
                                 </span>
-                                <a class="btn btn-primary" id="add_to_cart_button">Add to cart</a>
+                                <a class="btn btn-success btn-sm" id="add_to_cart_button">Add to cart</a>
                             </div>
                         </div>
                     </div>
@@ -204,7 +233,7 @@
                                     <h5 class="food-title">Food7</h5>
                                     <h6 class="food-price">10 RS</h6>
                                 </span>
-                                <a class="btn btn-primary" id="add_to_cart_button">Add to cart</a>
+                                <a class="btn btn-success btn-sm" id="add_to_cart_button">Add to cart</a>
                             </div>
                         </div>
                     </div>
@@ -216,7 +245,7 @@
                                     <h5 class="food-title">Food8</h5>
                                     <h6 class="food-price">12 RS</h6>
                                 </span>
-                                <a class="btn btn-primary" id="add_to_cart_button">Add to cart</a>
+                                <a class="btn btn-success btn-sm" id="add_to_cart_button">Add to cart</a>
                             </div>
                         </div>
                     </div>
@@ -226,9 +255,9 @@
                             <div class="card-body">
                                 <span>
                                     <h5 class="food-title">Food3</h5>
-                                    <h6 class="food-price">Food3</h6>
+                                    <h6 class="food-price">15 Rs</h6>
                                 </span>
-                                <a class="btn btn-primary" id="add_to_cart_button">Add to cart</a>
+                                <a class="btn btn-success btn-sm" id="add_to_cart_button">Add to cart</a>
                             </div>
                         </div>
                     </div>
@@ -240,14 +269,14 @@
                                     <h5 class="food-title" id="title">Food4</h5>
                                     <h6 class="food-price">8 Rs</h6>
                                 </span>
-                                <a class="btn btn-primary" id="add_to_cart_button">Add to cart</a>
+                                <a class="btn btn-success btn-sm" id="add_to_cart_button">Add to cart</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- cart layout -->
-            <div class="col-sm-4">
+            <div class="col-sm-12 col-md-12 col-lg-4">
                 <h4 class="cart-header">Cart</h4>
                 <div class="cart">
                 </div>

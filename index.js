@@ -1,5 +1,6 @@
 //cart-dom
 const cartDom = document.querySelector('.cart');
+let cart = [];
 
 //all food items button
 const addToCartButtonsDom = document.querySelectorAll('#add_to_cart_button');
@@ -24,15 +25,30 @@ addToCartButtonsDom.forEach(addToCartButtonDom => {
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         <span>${product.name}</span>
                         <span><img src="${product.image}" alt="${product.name}"></span>
+                        <span class="badge badge-success badge-pill decrease">&minus;</span>
+                        <span>1</span>
+                        <span class="badge badge-success badge-pill increase">&plus;</span>
                          <span class="badge badge-primary badge-pill">${product.price}</span>
+                         <span class="badge badge-danger badge-pill delete">&times;</span>
                     </li>
                 </ul>
-            `)
+            `);
+
+        cart.push(product);
+        addToCartButtonDom.innerText = 'In Cart';
+        addToCartButtonDom.classList.add("button-disable");
     })
 });
 
-/*Note:- other method to loop into an array
 
+
+
+
+
+
+
+
+/*Note:- other method to loop into an array
     Array.from(addToCartButtonsDom).forEach((foo)=>{
         return foo;
     })
