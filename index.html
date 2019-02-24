@@ -90,10 +90,12 @@
     }
 
     .card-body a {
-        float: right;
+        width: 100%;
+        color: #fff !important;
         margin-top: 10px;
         cursor: pointer;
     }
+
 
     .food-title,
     .food-price {
@@ -107,6 +109,18 @@
     .food-price {
         text-align: right;
         width: 100%;
+    }
+
+    .food-button {
+        width: 100%;
+        margin-top: 10px;
+        background: #35a746;
+        border: 0px;
+        color: #fff;
+    }
+
+    .card-body {
+        padding-bottom: 1rem !important;
     }
 
     /* cart styles */
@@ -129,11 +143,6 @@
         height: 35px;
     }
 
-    .card-body a {
-        width: 100%;
-        color: #fff !important;
-    }
-
     .increase,
     .decrease,
     .delete {
@@ -142,6 +151,19 @@
 
     .button-disable {
         pointer-events: none;
+        background: transparent;
+        border: 1px solid #35a746;
+        color: #35a746;
+    }
+
+    button:focus {
+        outline: 1px dotted;
+        outline: 0px !important;
+    }
+
+    .button-enable {
+        pointer-events: visible;
+
     }
 </style>
 
@@ -161,7 +183,8 @@
                                     <h5 class="food-title">food1</h5>
                                     <h6 class="food-price">5 Rs</h6>
                                 </span>
-                                <a class="btn btn-success btn-sm" id="add_to_cart_button">Add to cart</a>
+                            <button class="food-button" id="add_to_cart_button">Add to cart</button>
+
                             </div>
                         </div>
                     </div>
@@ -173,7 +196,7 @@
                                     <h5 class="food-title">food2</h5>
                                     <h6 class="food-price">10 Rs</h6>
                                 </span>
-                                <a class="btn btn-success btn-sm" id="add_to_cart_button">Add to cart</a>
+                            <button class="food-button" id="add_to_cart_button">Add to cart</button>
                             </div>
                         </div>
                     </div>
@@ -185,7 +208,7 @@
                                     <h5 class="food-title">Food3</h5>
                                     <h6 class="food-price">6 Rs</h6>
                                 </span>
-                                <a class="btn btn-success btn-sm" id="add_to_cart_button">Add to cart</a>
+                            <button class="food-button" id="add_to_cart_button">Add to cart</button>
                             </div>
                         </div>
                     </div>
@@ -197,7 +220,8 @@
                                     <h5 class="food-title">Food4</h5>
                                     <h6 class="food-price">12 Rs</h6>
                                 </span>
-                                <a class="btn btn-success btn-sm" id="add_to_cart_button">Add to cart</a>
+                            <button class="food-button" id="add_to_cart_button">Add to cart</button>
+
                             </div>
                         </div>
                     </div>
@@ -209,7 +233,8 @@
                                     <h5 class="food-title">Food5</h5>
                                     <h6 class="food-price">15 RS</h6>
                                 </span>
-                                <a class="btn btn-success btn-sm" id="add_to_cart_button">Add to cart</a>
+                            <button class="food-button" id="add_to_cart_button">Add to cart</button>
+
                             </div>
                         </div>
                     </div>
@@ -221,7 +246,8 @@
                                     <h5 class="food-title">Food6</h5>
                                     <h6 class="food-price">15 RS</h6>
                                 </span>
-                                <a class="btn btn-success btn-sm" id="add_to_cart_button">Add to cart</a>
+                            <button class="food-button" id="add_to_cart_button">Add to cart</button>
+
                             </div>
                         </div>
                     </div>
@@ -233,7 +259,8 @@
                                     <h5 class="food-title">Food7</h5>
                                     <h6 class="food-price">10 RS</h6>
                                 </span>
-                                <a class="btn btn-success btn-sm" id="add_to_cart_button">Add to cart</a>
+                            <button class="food-button" id="add_to_cart_button">Add to cart</button>
+
                             </div>
                         </div>
                     </div>
@@ -245,7 +272,8 @@
                                     <h5 class="food-title">Food8</h5>
                                     <h6 class="food-price">12 RS</h6>
                                 </span>
-                                <a class="btn btn-success btn-sm" id="add_to_cart_button">Add to cart</a>
+                            <button class="food-button" id="add_to_cart_button">Add to cart</button>
+
                             </div>
                         </div>
                     </div>
@@ -257,7 +285,8 @@
                                     <h5 class="food-title">Food3</h5>
                                     <h6 class="food-price">15 Rs</h6>
                                 </span>
-                                <a class="btn btn-success btn-sm" id="add_to_cart_button">Add to cart</a>
+                            <button class="food-button" id="add_to_cart_button">Add to cart</button>
+
                             </div>
                         </div>
                     </div>
@@ -269,7 +298,8 @@
                                     <h5 class="food-title" id="title">Food4</h5>
                                     <h6 class="food-price">8 Rs</h6>
                                 </span>
-                                <a class="btn btn-success btn-sm" id="add_to_cart_button">Add to cart</a>
+                            <button class="food-button" id="add_to_cart_button">Add to cart</button>
+
                             </div>
                         </div>
                     </div>
