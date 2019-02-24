@@ -42,28 +42,29 @@ addToCartButtonsDom.forEach(addToCartButtonDom => {
             cart.push(product);
             addToCartButtonDom.innerText = 'In Cart';
             addToCartButtonDom.classList.add("button-disable");
-
-            const cartItemDom = document.querySelectorAll('.list-group-item');
-            cartItemDom.forEach(itemSelectedCartItemDom => {
-
-                if (itemSelectedCartItemDom.querySelector('.product-name').innerText === product.name) {
-                    itemSelectedCartItemDom.querySelector('[data-action="decr_quantity"]').addEventListener('click', () => {
-                        cart.forEach(cartItem => {
-                            if (cartItem.name === product.name && cartItem.quantity > 0) {
-                                itemSelectedCartItemDom.querySelector('.product-qty').innerText = --cartItem.quantity;
-                            }
-                        })
-                    })
-                    itemSelectedCartItemDom.querySelector('[data-action="incr_quantity"]').addEventListener('click', () => {
-                        cart.forEach(cartItem => {
-                            if (cartItem.name === product.name) {
-                                itemSelectedCartItemDom.querySelector('.product-qty').innerText = ++cartItem.quantity;
-                            }
-                        })
-                    })
-                }
-            });
         }
+
+        //cart functionality
+        const cartItemDom = document.querySelectorAll('.list-group-item');
+        cartItemDom.forEach(itemSelectedCartItemDom => {
+
+            if (itemSelectedCartItemDom.querySelector('.product-name').innerText === product.name) {
+                itemSelectedCartItemDom.querySelector('[data-action="decr_quantity"]').addEventListener('click', () => {
+                    cart.forEach(cartItem => {
+                        if (cartItem.name === product.name && cartItem.quantity > 0) {
+                            itemSelectedCartItemDom.querySelector('.product-qty').innerText = --cartItem.quantity;
+                        }
+                    })
+                })
+                itemSelectedCartItemDom.querySelector('[data-action="incr_quantity"]').addEventListener('click', () => {
+                    cart.forEach(cartItem => {
+                        if (cartItem.name === product.name) {
+                            itemSelectedCartItemDom.querySelector('.product-qty').innerText = ++cartItem.quantity;
+                        }
+                    })
+                })
+            }
+        });
     })
 });
 
