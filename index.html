@@ -132,8 +132,17 @@
         margin-bottom: 10px;
     }
 
-    .product-name, .list-group-item :nth-last-child(2){
+    .product-name,
+    .list-group-item :nth-last-child(2) {
         width: 50px;
+    }
+
+    .list-group-item {
+        padding: 10px !important
+    }
+
+    .list-group-item:last-child {
+        margin-bottom: 10px !important;
     }
 
     .list-group-item img {
@@ -148,25 +157,48 @@
         cursor: pointer;
     }
 
-    .button-disable {
-        pointer-events: none;
-        background: transparent;
-        border: 1px solid #35a746;
-        color: #35a746;
-    }
+    .abc {background: red}
 
     button:focus {
         outline: 1px dotted;
         outline: 0px !important;
     }
 
-    .button-enable {
-        pointer-events: visible;
-    }
-
     .product-qty {
         width: 20px;
         text-align: center;
+    }
+
+    .list-group-item {
+        animation: 0.3s add-item;
+    }
+
+    @keyframes add-item {
+        from {
+            margin-left: -200px;
+            margin-right: 200px;
+            opacity: 0;
+        }
+    }
+
+    .cart-item-removed {
+        animation: 0.3s remove-cart-item;
+    }
+
+    @keyframes remove-cart-item {
+        to {
+            margin-left: 200px;
+            margin-right: -200px;
+            opacity: 0;
+        }
+    }
+
+    :disabled {
+        opacity: 0.3;
+        cursor: not-allowed;
+        background: transparent;
+        border: 1px solid #35a746;
+        color: #35a746;
     }
 </style>
 
@@ -281,7 +313,7 @@
                             <img src="./assets/images/food8.png" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <span>
-                                    <h5 class="food-title">Food3</h5>
+                                    <h5 class="food-title">Food9</h5>
                                     <h6 class="food-price">15 Rs</h6>
                                 </span>
                                 <button class="food-button" id="add_to_cart_button">Add to cart</button>
@@ -293,7 +325,7 @@
                             <img src="./assets/images/food9.jpeg" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <span>
-                                    <h5 class="food-title" id="title">Food4</h5>
+                                    <h5 class="food-title" id="title">Food10</h5>
                                     <h6 class="food-price">8 Rs</h6>
                                 </span>
                                 <button class="food-button" id="add_to_cart_button">Add to cart</button>
