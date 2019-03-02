@@ -11,6 +11,13 @@
     <link rel="icon" href="./assets/images/favicon.ico" type="image/x-icon">
 </head>
 <style>
+    @import url('https://fonts.googleapis.com/css?family=Lato:400i');
+
+    body {
+        font-family: 'Lato', sans-serif;
+        padding-top: 70px;
+    }
+
     /* product styles */
     .products {
         margin-top: 10px;
@@ -137,14 +144,6 @@
         width: 50px;
     }
 
-    .list-group-item {
-        padding: 10px !important
-    }
-
-    .list-group-item:last-child {
-        margin-bottom: 10px !important;
-    }
-
     .list-group-item img {
         width: 35px;
         height: 35px;
@@ -156,8 +155,6 @@
     .delete {
         cursor: pointer;
     }
-
-    .abc {background: red}
 
     button:focus {
         outline: 1px dotted;
@@ -181,6 +178,17 @@
         }
     }
 
+    .list-group-item:hover {
+        margin-bottom: 10px;
+        margin-top: 10px;
+        transform: scale(1.1);
+        box-shadow: 5px 5px 10px 5px #c7c1c170;
+        transition: all .3s ease;
+        -webkit-transition: all .3s ease;
+        /* for Safari & Chrome */
+    }
+
+
     .cart-item-removed {
         animation: 0.3s remove-cart-item;
     }
@@ -200,9 +208,34 @@
         border: 1px solid #35a746;
         color: #35a746;
     }
+
+    .show-cart {
+        display: none;
+    }
+
+    .show-cart-sm-dev {
+        display: block;
+    }
+
+    @media (min-width: 992px) {
+        .show-cart-sm-dev {
+            display: none;
+        }
+    }
 </style>
 
 <body>
+    <nav class="navbar navbar-success bg-success mb-5 fixed-top">
+        <a class="navbar-brand" href="/" style="font-style: italic;">E-Food</a>
+        <div class="navbar-expand mr-auto">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="#">Home</a>
+                <a class="nav-item nav-link" href="#">About</a>
+                <a class="nav-item nav-link" href="#">Contact</a>
+            </div>
+        </div>
+        <a class="show-cart" href="">Cart</a>
+    </nav>
     <div class="container">
         <!-- main layout -->
         <div class="row">
@@ -216,7 +249,7 @@
                             <div class="card-body">
                                 <span>
                                     <h5 class="food-title">food1</h5>
-                                    <h6 class="food-price">5 Rs</h6>
+                                    <h6 class="food-price">5 &#X20B9;</h6>
                                 </span>
                                 <button class="food-button" id="add_to_cart_button">Add to cart</button>
 
@@ -229,7 +262,7 @@
                             <div class="card-body">
                                 <span>
                                     <h5 class="food-title">food2</h5>
-                                    <h6 class="food-price">10 Rs</h6>
+                                    <h6 class="food-price">10 &#X20B9;</h6>
                                 </span>
                                 <button class="food-button" id="add_to_cart_button">Add to cart</button>
                             </div>
@@ -241,7 +274,7 @@
                             <div class="card-body">
                                 <span>
                                     <h5 class="food-title">Food3</h5>
-                                    <h6 class="food-price">6 Rs</h6>
+                                    <h6 class="food-price">6 &#X20B9;</h6>
                                 </span>
                                 <button class="food-button" id="add_to_cart_button">Add to cart</button>
                             </div>
@@ -253,7 +286,7 @@
                             <div class="card-body">
                                 <span>
                                     <h5 class="food-title">Food4</h5>
-                                    <h6 class="food-price">12 Rs</h6>
+                                    <h6 class="food-price">12 &#X20B9;</h6>
                                 </span>
                                 <button class="food-button" id="add_to_cart_button">Add to cart</button>
                             </div>
@@ -265,7 +298,7 @@
                             <div class="card-body">
                                 <span>
                                     <h5 class="food-title">Food5</h5>
-                                    <h6 class="food-price">15 RS</h6>
+                                    <h6 class="food-price">15 &#X20B9;</h6>
                                 </span>
                                 <button class="food-button" id="add_to_cart_button">Add to cart</button>
                             </div>
@@ -277,7 +310,7 @@
                             <div class="card-body">
                                 <span>
                                     <h5 class="food-title">Food6</h5>
-                                    <h6 class="food-price">15 RS</h6>
+                                    <h6 class="food-price">15 &#X20B9;</h6>
                                 </span>
                                 <button class="food-button" id="add_to_cart_button">Add to cart</button>
 
@@ -290,7 +323,7 @@
                             <div class="card-body">
                                 <span>
                                     <h5 class="food-title">Food7</h5>
-                                    <h6 class="food-price">10 RS</h6>
+                                    <h6 class="food-price">10 &#X20B9;</h6>
                                 </span>
                                 <button class="food-button" id="add_to_cart_button">Add to cart</button>
                             </div>
@@ -302,7 +335,7 @@
                             <div class="card-body">
                                 <span>
                                     <h5 class="food-title">Food8</h5>
-                                    <h6 class="food-price">12 RS</h6>
+                                    <h6 class="food-price">12 &#X20B9;</h6>
                                 </span>
                                 <button class="food-button" id="add_to_cart_button">Add to cart</button>
                             </div>
@@ -314,7 +347,7 @@
                             <div class="card-body">
                                 <span>
                                     <h5 class="food-title">Food9</h5>
-                                    <h6 class="food-price">15 Rs</h6>
+                                    <h6 class="food-price">15 &#X20B9;</h6>
                                 </span>
                                 <button class="food-button" id="add_to_cart_button">Add to cart</button>
                             </div>
@@ -326,7 +359,7 @@
                             <div class="card-body">
                                 <span>
                                     <h5 class="food-title" id="title">Food10</h5>
-                                    <h6 class="food-price">8 Rs</h6>
+                                    <h6 class="food-price">8 &#X20B9;</h6>
                                 </span>
                                 <button class="food-button" id="add_to_cart_button">Add to cart</button>
                             </div>
@@ -335,7 +368,7 @@
                 </div>
             </div>
             <!-- cart layout -->
-            <div class="col-sm-12 col-md-12 col-lg-4">
+            <div class="d-xs-none d-sm-none d-md-none d-lg-block col-lg-4">
                 <h4 class="cart-header">Cart</h4>
                 <div class="cart">
                 </div>
