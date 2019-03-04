@@ -1,9 +1,17 @@
 //cart-dom
-const cartDom = document.querySelector('.cart');
+const appWindowWidth = window.innerWidth;
+let cartDom;
+if (appWindowWidth < 992) {
+    cartDom = document.querySelector('.cart-sm');
+} else {
+    cartDom = document.querySelector('.cart');
+}
+
+// const cartDom = document.querySelector('.cart-sm');
 let cart = [];
 
 //cartIcon show- only for small devices
-cartIconDom = document.querySelector('.show-cart');
+const cartIconDom = document.querySelector('.show-cart');
 
 //all food items button
 const addToCartButtonsDom = document.querySelectorAll('#add_to_cart_button');
@@ -23,7 +31,7 @@ addToCartButtonsDom.forEach(addToCartButtonDom => {
             price: itemSelected.querySelector('.food-price').innerText,
             quantity: 1
         }
-        
+
         //check with cart and product
         const isInCart = cart.filter(cartItem => (cartItem.name === product.name)).length > 0;
         if (!isInCart) {
@@ -43,7 +51,7 @@ addToCartButtonsDom.forEach(addToCartButtonDom => {
             `);
 
             cart.push(product);
-            cartIconDom.classList.add('show-cart-sm-dev')
+            cartIconDom.classList.add('show-cart-sm-dev');
             addToCartButtonDom.innerText = 'In Cart';
             addToCartButtonDom.disabled = true;
         }
@@ -84,7 +92,8 @@ addToCartButtonsDom.forEach(addToCartButtonDom => {
                         }
                     })
                     if (cart.length < 1) {
-                        cartIconDom.classList.remove('show-cart-sm-dev')
+                        cartIconDom.classList.remove('show-cart-sm-dev');
+                        drawer.closeDrawer();
                     }
 
                 })
@@ -92,7 +101,6 @@ addToCartButtonsDom.forEach(addToCartButtonDom => {
                 //delete product quantity
                 itemSelectedCartItemDom.querySelector('[data-action="delete_item"]').addEventListener('click', () => {
                     cart.forEach(cartItem => {
-
                         if (cartItem.name === product.name) {
                             itemSelectedCartItemDom.classList.add('cart-item-removed');
                             setTimeout(() => itemSelectedCartItemDom.remove(), 300);
@@ -101,7 +109,8 @@ addToCartButtonsDom.forEach(addToCartButtonDom => {
                             addToCartButtonDom.disabled = false;
                         }
                         if (cart.length < 1) {
-                            cartIconDom.classList.remove('show-cart-sm-dev')
+                            cartIconDom.classList.remove('show-cart-sm-dev');
+                            drawer.closeDrawer();
                         }
                     })
                 })
@@ -124,3 +133,6 @@ addToCartButtonsDom.forEach(addToCartButtonDom => {
         return foo;
     })
 */
+
+
+

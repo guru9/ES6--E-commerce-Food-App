@@ -1,0 +1,249 @@
+    @import url('https://fonts.googleapis.com/css?family=Lato:400i');
+
+    * {
+        box-sizing: border-box;
+    }
+
+    html,body {
+        font-family: 'Lato', sans-serif;
+        padding-top: 40px;
+        margin: 0;
+    }
+
+    #header {
+        background: #35a746;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 3;
+        box-shadow: 0 3px 6px -3px rgba(0, 0, 0, 0.5);
+    }
+
+    #header .rx_icon {
+        float: right;
+        height: 56px;
+        width: 56px;
+    }
+
+    #header .title {
+        /* height: 100%; */
+        line-height: 56px;
+        padding-left: 16px;
+        /* padding-right: 8px; */
+        float: left;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+    }
+   
+    /* product styles */
+    .products {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .card {
+        box-shadow: 2px 5px 5px 0px #eee;
+        margin-bottom: 10px;
+    }
+
+    .card:hover {
+        box-shadow: 5px 5px 10px 5px #c7c1c170;
+    }
+
+    .card img:hover {
+        /* Start the shake animation and make the animation last for 0.5 seconds */
+        animation: shake 0.5s;
+
+        /* When the animation is finished, start again */
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes shake {
+        0% {
+            transform: translate(1px, 1px) rotate(0deg);
+        }
+
+        10% {
+            transform: translate(-1px, -2px) rotate(-1deg);
+        }
+
+        20% {
+            transform: translate(-3px, 0px) rotate(1deg);
+        }
+
+        30% {
+            transform: translate(3px, 2px) rotate(0deg);
+        }
+
+        40% {
+            transform: translate(1px, -1px) rotate(1deg);
+        }
+
+        50% {
+            transform: translate(-1px, 2px) rotate(-1deg);
+        }
+
+        60% {
+            transform: translate(-3px, 1px) rotate(0deg);
+        }
+
+        70% {
+            transform: translate(3px, 1px) rotate(-1deg);
+        }
+
+        80% {
+            transform: translate(-1px, -1px) rotate(1deg);
+        }
+
+        90% {
+            transform: translate(1px, 2px) rotate(0deg);
+        }
+
+        100% {
+            transform: translate(1px, -2px) rotate(-1deg);
+        }
+    }
+
+    .card-img-top {
+        height: 150px !important;
+        padding: 10px;
+    }
+
+    .card-body span {
+        display: flex;
+    }
+
+    .card-body a {
+        width: 100%;
+        color: #fff !important;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+
+
+    .food-title,
+    .food-price {
+        line-height: 10px;
+    }
+
+    .food-title {
+        text-align: left;
+    }
+
+    .food-price {
+        text-align: right;
+        width: 100%;
+    }
+
+    .food-button {
+        width: 100%;
+        margin-top: 10px;
+        background: #35a746;
+        border: 0px;
+        color: #fff;
+    }
+
+    .card-body {
+        padding-bottom: 1rem !important;
+    }
+
+    /* cart styles */
+    .cart-header {
+        text-align: center;
+    }
+
+    .cart {
+        margin-bottom: 10px;
+    }
+
+    .product-name,
+    .list-group-item :nth-last-child(2) {
+        width: 50px;
+    }
+
+    .list-group-item img {
+        width: 35px;
+        height: 35px;
+        margin-right: 5px;
+    }
+
+    .increase,
+    .decrease,
+    .delete {
+        cursor: pointer;
+    }
+
+    button:focus {
+        outline: 1px dotted;
+        outline: 0px !important;
+    }
+
+    .product-qty {
+        width: 20px;
+        text-align: center;
+    }
+
+    .list-group-item {
+        animation: 0.3s add-item;
+        padding: 0.75rem 0.75rem;
+    }
+
+    @keyframes add-item {
+        from {
+            margin-left: -200px;
+            margin-right: 200px;
+            opacity: 0;
+        }
+    }
+
+    .list-group-item:hover {
+        padding: 0.75rem 1.25rem !important;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        transform: scale(1.1);
+        box-shadow: 5px 5px 10px 5px #c7c1c170;
+        transition: all .3s ease;
+        -webkit-transition: all .3s ease; /* for Safari & Chrome */
+    }
+
+
+    .cart-item-removed {
+        animation: 0.3s remove-cart-item;
+    }
+
+    @keyframes remove-cart-item {
+        to {
+            margin-left: 200px;
+            margin-right: -200px;
+            opacity: 0;
+        }
+    }
+
+    :disabled {
+        opacity: 0.3;
+        cursor: not-allowed;
+        background: transparent;
+        border: 1px solid #35a746;
+        color: #35a746;
+    }
+
+    .show-cart{
+        display: none;
+    } 
+
+    .show-cart-sm-dev {
+        display: block;
+    }
+    
+
+    @media (min-width: 992px) {
+        .show-cart-sm-dev {
+            display: none;
+        }
+    }
+    
+    
+    

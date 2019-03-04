@@ -9,233 +9,17 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="icon" href="./assets/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./assets/drawer.css">
 </head>
-<style>
-    @import url('https://fonts.googleapis.com/css?family=Lato:400i');
 
-    body {
-        font-family: 'Lato', sans-serif;
-        padding-top: 70px;
-    }
-
-    /* product styles */
-    .products {
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-
-    .card {
-        box-shadow: 2px 5px 5px 0px #eee;
-        margin-bottom: 10px;
-    }
-
-    .card:hover {
-        box-shadow: 5px 5px 10px 5px #c7c1c170;
-    }
-
-    .card img:hover {
-        /* Start the shake animation and make the animation last for 0.5 seconds */
-        animation: shake 0.5s;
-
-        /* When the animation is finished, start again */
-        animation-iteration-count: infinite;
-    }
-
-    @keyframes shake {
-        0% {
-            transform: translate(1px, 1px) rotate(0deg);
-        }
-
-        10% {
-            transform: translate(-1px, -2px) rotate(-1deg);
-        }
-
-        20% {
-            transform: translate(-3px, 0px) rotate(1deg);
-        }
-
-        30% {
-            transform: translate(3px, 2px) rotate(0deg);
-        }
-
-        40% {
-            transform: translate(1px, -1px) rotate(1deg);
-        }
-
-        50% {
-            transform: translate(-1px, 2px) rotate(-1deg);
-        }
-
-        60% {
-            transform: translate(-3px, 1px) rotate(0deg);
-        }
-
-        70% {
-            transform: translate(3px, 1px) rotate(-1deg);
-        }
-
-        80% {
-            transform: translate(-1px, -1px) rotate(1deg);
-        }
-
-        90% {
-            transform: translate(1px, 2px) rotate(0deg);
-        }
-
-        100% {
-            transform: translate(1px, -2px) rotate(-1deg);
-        }
-    }
-
-    .card-img-top {
-        height: 150px !important;
-        padding: 10px;
-    }
-
-    .card-body span {
-        display: flex;
-    }
-
-    .card-body a {
-        width: 100%;
-        color: #fff !important;
-        margin-top: 10px;
-        cursor: pointer;
-    }
-
-
-    .food-title,
-    .food-price {
-        line-height: 10px;
-    }
-
-    .food-title {
-        text-align: left;
-    }
-
-    .food-price {
-        text-align: right;
-        width: 100%;
-    }
-
-    .food-button {
-        width: 100%;
-        margin-top: 10px;
-        background: #35a746;
-        border: 0px;
-        color: #fff;
-    }
-
-    .card-body {
-        padding-bottom: 1rem !important;
-    }
-
-    /* cart styles */
-    .cart-header {
-        text-align: center;
-    }
-
-    .cart {
-        margin-bottom: 10px;
-    }
-
-    .product-name,
-    .list-group-item :nth-last-child(2) {
-        width: 50px;
-    }
-
-    .list-group-item img {
-        width: 35px;
-        height: 35px;
-        margin-right: 5px;
-    }
-
-    .increase,
-    .decrease,
-    .delete {
-        cursor: pointer;
-    }
-
-    button:focus {
-        outline: 1px dotted;
-        outline: 0px !important;
-    }
-
-    .product-qty {
-        width: 20px;
-        text-align: center;
-    }
-
-    .list-group-item {
-        animation: 0.3s add-item;
-    }
-
-    @keyframes add-item {
-        from {
-            margin-left: -200px;
-            margin-right: 200px;
-            opacity: 0;
-        }
-    }
-
-    .list-group-item:hover {
-        margin-bottom: 10px;
-        margin-top: 10px;
-        transform: scale(1.1);
-        box-shadow: 5px 5px 10px 5px #c7c1c170;
-        transition: all .3s ease;
-        -webkit-transition: all .3s ease;
-        /* for Safari & Chrome */
-    }
-
-
-    .cart-item-removed {
-        animation: 0.3s remove-cart-item;
-    }
-
-    @keyframes remove-cart-item {
-        to {
-            margin-left: 200px;
-            margin-right: -200px;
-            opacity: 0;
-        }
-    }
-
-    :disabled {
-        opacity: 0.3;
-        cursor: not-allowed;
-        background: transparent;
-        border: 1px solid #35a746;
-        color: #35a746;
-    }
-
-    .show-cart {
-        display: none;
-    }
-
-    .show-cart-sm-dev {
-        display: block;
-    }
-
-    @media (min-width: 992px) {
-        .show-cart-sm-dev {
-            display: none;
-        }
-    }
-</style>
 
 <body>
-    <nav class="navbar navbar-success bg-success mb-5 fixed-top">
-        <a class="navbar-brand" href="/" style="font-style: italic;">E-Food</a>
-        <div class="navbar-expand mr-auto">
-            <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="#">Home</a>
-                <a class="nav-item nav-link" href="#">About</a>
-                <a class="nav-item nav-link" href="#">Contact</a>
-            </div>
-        </div>
-        <a class="show-cart" href="">Cart</a>
-    </nav>
+    <div class="header" id="header">
+        <div class="title" id="title">E-Food</div>
+        <div class="rx_icon show-cart" id="rx_icon"></div>
+    </div>
+
     <div class="container">
         <!-- main layout -->
         <div class="row">
@@ -376,6 +160,24 @@
         </div>
     </div>
 
+
+    <div class="drawer" id="drawer">
+        <div class="content">
+            <div class="header">
+                <div class="avatar"></div>
+                <div class="total-amount">Total:&nbsp; 50 &#X20b9;</div>
+                <div class="text">
+                    <div class="field name">E-Food</div>
+                </div>
+            </div>
+            <div class="cart-list">Cart List</div>
+            <div class="cart-sm">
+            </div>
+        </div>
+    </div>
+
+
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -386,6 +188,7 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <script src="./index.js"></script>
+    <script src="./assets/drawer.js"></script>
 </body>
 
 </html>

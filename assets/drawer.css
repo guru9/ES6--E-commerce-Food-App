@@ -1,0 +1,197 @@
+    /* drawer-style */
+    .drawer .content {
+        height: 100%;
+        position: relative;
+        overflow-y: auto;
+        bottom: 0;
+        top: 0;
+    }
+    
+    .drawer .content .header {
+        height: 110px;
+        background: #687894;
+        position: relative;
+    }
+    
+    .drawer .content .header .avatar {
+        background-image: url('./images/food.jpeg');
+        height: 50px;
+        width: 50px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 100%;
+        position: absolute;
+        left: 16px;
+        top: 16px;
+    }
+
+    .drawer .content .header .total-amount {
+        height: 64px;
+        position: absolute;
+        right: 16px;
+        top: 16px;
+        color: #fff;
+        line-height: 1rem;
+    }
+    
+    .drawer .content .header .text {
+        height: 40px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 8px 0;
+        color: white;
+    }
+    
+    .drawer .content .header .text .field {
+        padding-left: 16px;
+        font-size: 14px;
+    }
+    
+    .drawer .content .header .text .field.name {
+        font-weight: bold;
+    }
+    
+    .drawer .content .header .text .field.info {
+        margin-top: 4px;
+    }
+    
+    .cart-list {
+        text-align: center;
+        color: rgba(0, 0, 0, 0.26);
+        height: 25px;
+    }
+    
+    
+    /* Drawer Library */
+    .rx_noselect {
+        /* iOS Safari */
+    
+        -webkit-touch-callout: none;
+        /* Chrome/Safari/Opera */
+    
+        -webkit-user-select: none;
+        /* Konqueror */
+    
+        -khtml-user-select: none;
+        /* Firefox */
+    
+        -moz-user-select: none;
+        /* Internet Explorer/Edge */
+    
+        -ms-user-select: none;
+        /* Non-prefixed version, currently
+                                  not supported by any browser */
+    
+        user-select: none;
+    }
+    
+    .drawer_bg {
+        position: fixed;
+        background: rgba(0, 0, 0, 0.5);
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 4;
+        opacity: 0.001;
+        -webkit-transform: translateZ(0);
+        -moz-transform: translateZ(0);
+        -ms-transform: translateZ(0);
+        -o-transform: translateZ(0);
+        transform: translateZ(0);
+        visibility: hidden;
+    }
+    
+    .drawer {
+        max-width: 350px;
+        width: 80%;
+        height: 100%;
+        left: 0px;
+        top: 0;
+        bottom: 0;
+        -webkit-transform: translateX(-100%);
+        -moz-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+        -o-transform: translateX(-100%);
+        transform: translateX(-100%);
+        background: white;
+        position: fixed;
+        z-index: 5;
+        opacity: 0.001;
+        -webkit-box-shadow: 3px 0 16px -3px rgba(0, 0, 0, 0.4);
+        -moz-box-shadow: 3px 0 16px -3px rgba(0, 0, 0, 0.4);
+        -ms-box-shadow: 3px 0 16px -3px rgba(0, 0, 0, 0.4);
+        -o-box-shadow: 3px 0 16px -3px rgba(0, 0, 0, 0.4);
+        box-shadow: 3px 0 16px -3px rgba(0, 0, 0, 0.4);
+    }
+    
+    .drawer .label {
+        position: absolute;
+        top: 56px;
+        bottom: 0;
+        width: 32px;
+        right: -32px;
+    }
+    
+    .drawer .antiSelect {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        visibility: hidden;
+    }
+    
+    /* Hamburger Library */
+    .rx_icon {
+        position: relative;
+        height: 64px;
+        width: 64px;
+    }
+    
+    .rx_icon .ic {
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        left: 50%;
+        margin-left: -12px;
+        top: 50%;
+        margin-top: -12px;
+    }
+    
+    .rx_icon .ic .line {
+        position: absolute;
+        left: 3px;
+        right: 3px;
+        height: 2px;
+        background: white;
+        outline: 1px solid transparent;
+    }
+    
+    .rx_icon .ic .line.one {
+        top: 6px;
+        -webkit-transform-origin: right bottom;
+        -moz-transform-origin: right bottom;
+        -ms-transform-origin: right bottom;
+        -o-transform-origin: right bottom;
+        transform-origin: right bottom;
+    }
+    
+    .rx_icon .ic .line.two {
+        top: 11px;
+    }
+    
+    .rx_icon .ic .line.thr {
+        -webkit-transform-origin: right top;
+        -moz-transform-origin: right top;
+        -ms-transform-origin: right top;
+        -o-transform-origin: right top;
+        transform-origin: right top;
+        top: 16px;
+    }
