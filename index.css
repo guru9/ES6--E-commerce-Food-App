@@ -245,5 +245,7 @@
         }
     }
     
-    
+    #product-box {
+        margin: auto !important;
+    }
     

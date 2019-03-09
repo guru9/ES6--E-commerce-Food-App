@@ -1,14 +1,17 @@
+let cart = [];
+document.getElementById('small-dev').style.display = "none";
+
 //cart-dom
 const appWindowWidth = window.innerWidth;
 let cartDom;
 if (appWindowWidth < 992) {
     cartDom = document.querySelector('.cart-sm');
+    document.getElementById('small-dev').style.display = "none";
 } else {
     cartDom = document.querySelector('.cart');
 }
 
-// const cartDom = document.querySelector('.cart-sm');
-let cart = [];
+
 
 //cartIcon show- only for small devices
 const cartIconDom = document.querySelector('.show-cart');
@@ -20,6 +23,7 @@ const addToCartButtonsDom = document.querySelectorAll('#add_to_cart_button');
 addToCartButtonsDom.forEach(addToCartButtonDom => {
     //get selected item
     addToCartButtonDom.addEventListener('click', () => {
+
         //selected item
         let clickedProductDom = addToCartButtonDom.parentNode;
         const itemSelected = clickedProductDom.parentNode;
@@ -54,6 +58,7 @@ addToCartButtonsDom.forEach(addToCartButtonDom => {
             cartIconDom.classList.add('show-cart-sm-dev');
             addToCartButtonDom.innerText = 'In Cart';
             addToCartButtonDom.disabled = true;
+            document.getElementById('small-dev').style.display = "block";
         }
 
         //cart functionality
@@ -94,6 +99,7 @@ addToCartButtonsDom.forEach(addToCartButtonDom => {
                     if (cart.length < 1) {
                         cartIconDom.classList.remove('show-cart-sm-dev');
                         drawer.closeDrawer();
+                        document.getElementById('small-dev').style.display = "none";
                     }
 
                 })
@@ -111,13 +117,17 @@ addToCartButtonsDom.forEach(addToCartButtonDom => {
                         if (cart.length < 1) {
                             cartIconDom.classList.remove('show-cart-sm-dev');
                             drawer.closeDrawer();
+                            document.getElementById('small-dev').style.display = "none";
                         }
                     })
                 })
 
             }
         });
+
+
     })
+
 });
 
 
