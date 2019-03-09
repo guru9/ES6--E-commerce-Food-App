@@ -1,6 +1,8 @@
 let cart = [];
-document.getElementById('small-dev').style.display = "none";
+document.getElementById('targetEl').innerText = cart.length;
 
+
+document.getElementById('small-dev').style.display = "none";
 //cart-dom
 const appWindowWidth = window.innerWidth;
 let cartDom;
@@ -10,8 +12,6 @@ if (appWindowWidth < 992) {
 } else {
     cartDom = document.querySelector('.cart');
 }
-
-
 
 //cartIcon show- only for small devices
 const cartIconDom = document.querySelector('.show-cart');
@@ -59,6 +59,7 @@ addToCartButtonsDom.forEach(addToCartButtonDom => {
             addToCartButtonDom.innerText = 'In Cart';
             addToCartButtonDom.disabled = true;
             document.getElementById('small-dev').style.display = "block";
+            document.getElementById('targetEl').innerText = cart.length;
         }
 
         //cart functionality
@@ -95,13 +96,13 @@ addToCartButtonsDom.forEach(addToCartButtonDom => {
                                 itemSelectedCartItemDom.querySelector('[data-action="decr_quantity"]').classList.add('badge-danger');
                             }
                         }
+                        document.getElementById('targetEl').innerText = cart.length;
                     })
                     if (cart.length < 1) {
                         cartIconDom.classList.remove('show-cart-sm-dev');
                         drawer.closeDrawer();
                         document.getElementById('small-dev').style.display = "none";
                     }
-
                 })
 
                 //delete product quantity
@@ -119,10 +120,12 @@ addToCartButtonsDom.forEach(addToCartButtonDom => {
                             drawer.closeDrawer();
                             document.getElementById('small-dev').style.display = "none";
                         }
+                        document.getElementById('targetEl').innerText = cart.length;
                     })
                 })
 
             }
+
         });
 
 
