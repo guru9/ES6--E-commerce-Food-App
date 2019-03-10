@@ -25,6 +25,7 @@
         float: right;
         height: 56px;
         width: 56px;
+        cursor: pointer;
     }
 
     #header .title {

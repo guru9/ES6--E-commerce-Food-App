@@ -1,7 +1,6 @@
 let cart = [];
 document.getElementById('targetEl').innerText = cart.length;
 
-
 document.getElementById('small-dev').style.display = "none";
 //cart-dom
 const appWindowWidth = window.innerWidth;
@@ -60,6 +59,7 @@ addToCartButtonsDom.forEach(addToCartButtonDom => {
             addToCartButtonDom.disabled = true;
             document.getElementById('small-dev').style.display = "block";
             document.getElementById('targetEl').innerText = cart.length;
+            document.getElementById('small-targetEl').innerText = cart.length;
         }
 
         //cart functionality
@@ -97,6 +97,7 @@ addToCartButtonsDom.forEach(addToCartButtonDom => {
                             }
                         }
                         document.getElementById('targetEl').innerText = cart.length;
+                        document.getElementById('small-targetEl').innerText = cart.length;
                     })
                     if (cart.length < 1) {
                         cartIconDom.classList.remove('show-cart-sm-dev');
@@ -121,6 +122,7 @@ addToCartButtonsDom.forEach(addToCartButtonDom => {
                             document.getElementById('small-dev').style.display = "none";
                         }
                         document.getElementById('targetEl').innerText = cart.length;
+                        document.getElementById('small-targetEl').innerText = cart.length;
                     })
                 })
 

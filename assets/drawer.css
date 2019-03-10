@@ -9,7 +9,7 @@
     
     .drawer .content .header {
         height: 110px;
-        background: #687894;
+        background: #35a746;
         position: relative;
     }
     
@@ -35,6 +35,14 @@
         line-height: 1rem;
     }
     
+    .small-cartlist {
+        position: absolute;
+        right: 16px;
+        bottom: 15px;
+        color: #fff;
+        line-height: 1rem;
+    }
+
     .drawer .content .header .text {
         height: 40px;
         position: absolute;
