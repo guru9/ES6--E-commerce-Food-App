@@ -246,6 +246,12 @@
         }
     }
     
+    @media (max-width: 991px) {
+        #small-dev {
+            display: none !important;
+        }
+    }
+
     #product-box {
         margin: auto !important;
     }
