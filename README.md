@@ -2,4 +2,4 @@
 vanilla_CART_JS - ES6 Shopping cart App for oder food.
 
 ##demo
-<a href="https://guru9.github.io/ES6--E-commerce-Food-App/"></a>
+<a href="https://guru9.github.io/ES6--E-commerce-Food-App/" style="color: red"></a>
