@@ -72,6 +72,20 @@
         color: rgba(0, 0, 0, 0.26);
         height: 25px;
     }
+
+    .cart-sm {
+        margin-bottom: 80px;
+    }
+    
+    footer{
+        position: fixed;
+        width: 100%;
+        left: 0;
+        height: 50px;
+        background: #eeeeeeab;
+        bottom: 0;
+        text-align: center;
+    }
     
     
     /* Drawer Library */
